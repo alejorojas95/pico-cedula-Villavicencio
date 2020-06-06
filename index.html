@@ -131,8 +131,9 @@
                 <p class="card-text">Ejemplo de cedula 1234567890  el ultimo numero es el 0</p>
                 <form>
                     <input type="number" name="cedula" id="cedula" min="0" max="9" required />
-                    <button id="btnModal" type="submit" class="btn blue-gradient" value="Enviar" onclick="return recibir();">CONSULTAR</button>
-                    <div id="tvesModal" class="modalContainer">
+                    <button id="btnModal" type="submit" class="btn blue-gradient" value="submit" onclick="return recibir();">CONSULTAR</button>
+                </form>  
+                   <div id="tvesModal" class="modalContainer">
                         <div  id="modal-content" class="modal-content" >
 
                             <h2 >IMPORTANTE</h2>
@@ -141,7 +142,7 @@
                         </div>
                     </div>
                     <div id="txtcedula"></div>
-                </form>
+                
 
             </div>
             <div class="card-footer text-muted">
@@ -159,7 +160,8 @@
                 <form>
                     <input type="number" name="placa" id="placa" min="0" max="9" required />
                     <button id="btnModa" type="submit" class="btn blue-gradient" value="Enviar" onclick="return recibirPLACA();">CONSULTAR</button>
-                    <div id="tvesModal" class="modalContainer">
+                   
+   <div id="tvesModal" class="modalContainer">
                         <div class="modal-content" id="modal-content">
 
                             <h2>IMPORTANTE</h2>
