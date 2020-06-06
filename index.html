@@ -198,7 +198,7 @@
            var intro = document.getElementById('modal-content');
             var valor = document.getElementById("cedula").value;
             console.log(valor);
-     if(valor >= 0 && valor <= 9 && valor.toSting().length>0){ 
+     if(valor >= 0 && valor <=9){ 
             if (valor == 1 | valor == 3 | valor == 5 | valor == 7 | valor == 9 && d.getDay() == 6 | d.getDay() == 8 | d.getDay() == 10 | d.getDay() == 12 | d.getDay() == 14 | d.getDay() == 16 | d.getDay() == 18 | d.getDay() == 20 | d.getDay() == 22) {
                 modalneg();
                 document.getElementById("mjj").innerHTML = "<p font-color='red'>No puedes salir de casa!</p>";
