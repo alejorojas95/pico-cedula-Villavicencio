@@ -64,6 +64,17 @@
                 border-top: 10px solid red;
                 width: 60%;
             }
+          
+          .modalpos{
+           background-color:#008000 ;
+                margin: auto;
+                padding: 20px;
+                border: 1px solid #008000;
+                border-top: 10px solid green;
+                width: 60%;
+
+
+          }
 
             
     </style>
@@ -202,7 +213,9 @@
             if (valor == 0 | valor == 2 | valor == 4 | valor == 6 | valor == 8 && d.getDay() == 6 | d.getDay() == 8 | d.getDay() == 10 | d.getDay() == 12 | d.getDay() == 14 | d.getDay() == 16 | d.getDay() == 18 | d.getDay() == 20 | d.getDay() == 22) {
                 modalneg();
                 document.getElementById("mjj").innerHTML = "<p font-color='red'>SII puedes salir de casa :)!</p>";
-
+               var intro = document.getElementById('modal-content');
+                intro.className = 'modalpos';
+              
             }
             if (valor == 0 | valor == 2 | valor == 4 | valor == 6 | valor == 8 && d.getDay() == 5 | d.getDay() == 7 | d.getDay() == 9 | d.getDay() == 11 | d.getDay() == 13 | d.getDay() == 15 | d.getDay() == 17 | d.getDay() == 19 | d.getDay() == 21) {
                 modalneg();
