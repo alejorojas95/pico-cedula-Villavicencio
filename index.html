@@ -189,9 +189,23 @@
                 document.getElementById("mjj").innerHTML = "<p font-color='red'>No puedes salir de casa!</p>";
 
             }
+
+           if (valor == 1 | valor == 3 | valor == 5 | valor == 7 | valor == 9 && d.getDay() == 5 | d.getDay() == 7 | d.getDay() == 9 | d.getDay() == 11 | d.getDay() == 13 | d.getDay() == 15 | d.getDay() == 17 | d.getDay() == 19 | d.getDay() == 21) {
+                modalneg();
+                document.getElementById("mjj").innerHTML = "<p font-color='red'>SII puedes salir de casa :)!</p> ";
+
+            }
+
+//cédula.par
+
+            if (valor == 0 | valor == 2 | valor == 4 | valor == 6 | valor == 8 && d.getDay() == 6 | d.getDay() == 8 | d.getDay() == 10 | d.getDay() == 12 | d.getDay() == 14 | d.getDay() == 16 | d.getDay() == 18 | d.getDay() == 20 | d.getDay() == 22) {
+                modalneg();
+                document.getElementById("mjj").innerHTML = "<p font-color='red'>SII puedes salir de casa :)!</p>";
+
+            }
             if (valor == 0 | valor == 2 | valor == 4 | valor == 6 | valor == 8 && d.getDay() == 5 | d.getDay() == 7 | d.getDay() == 9 | d.getDay() == 11 | d.getDay() == 13 | d.getDay() == 15 | d.getDay() == 17 | d.getDay() == 19 | d.getDay() == 21) {
                 modalneg();
-                document.getElementById("mjj").innerHTML = "<p font-color='red'>No puedes salir de casa!</p>";
+                document.getElementById("mjj").innerHTML = "<p font-color='red'>NOO puedes salir de casa!</p> ";
 
             }
             return false;
