@@ -241,14 +241,28 @@
         function recibirPLACA() {
             var valorp = document.getElementById("placa").value;
 
-            //document.getElementById("txtplaca").innerHTML = valorp;
+           
             console.log(valorp);
+            var num; 
+            num = Number(valorp);           
+
+            if (num >= 0 && num <= 9 && valor !== "") {
+               console.log("llegue aqui");
 
             if (valorp == 4 | valorp == 5 | valorp == 6 && d.getDate() == 5 | d.getDate() == 8 | d.getDate() == 11 | d.getDate() == 14 | d.getDate() == 17 | d.getDate() == 20 | d.getDate() == 23 | d.getDate() == 26 | d.getDate() == 29) {
-                modalneg();
+             document.getElementById("mjj").innerHTML = "<p font-color='red'>NOO puedes salir de casa!</p> ";
+             document.getElementById('estilos').href = 'css/negativo.css';
+             console.log(estilos);   
+             modalneg();
                 
 
             }
+
+            } else {
+                window.alert("Ingresa un numero valido entre 0 y 9 GRACIAS");
+                console.log("no entre");
+            }
+
             return false;
         }
 
