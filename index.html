@@ -219,7 +219,7 @@
                     document.getElementById('estilos').href = 'css/positivo.css';
                     console.log(estilos);
              
-                    console.log(intro);
+                    
 
                 }
                 if (valor == 0 | valor == 2 | valor == 4 | valor == 6 | valor == 8 && d.getDate() == 5 | d.getDate() == 7 | d.getDate() == 9 | d.getDate() == 11 | d.getDate() == 13 | d.getDate() == 15 | d.getDate() == 17 | d.getDate() == 19 | d.getDate() == 21) {
@@ -228,6 +228,7 @@
                     document.getElementById('estilos').href = 'css/negativo.css';
                     console.log(estilos);
                 }
+
             } else {
                 window.alert("Ingresa un numero valido entre 0 y 9 GRACIAS");
                 console.log("no entre");
@@ -269,6 +270,16 @@
             }
 
             if (valorp == 7 | valorp == 8 | valorp == 9 && d.getDate() == 9 | d.getDate() == 12 | d.getDate() == 15 | d.getDate() == 18 | d.getDate() == 21 | d.getDate() == 24 | d.getDate() == 27 | d.getDate() == 30) {
+              document.getElementById("mjj").innerHTML = "<p font-color='red'>SII puedes salir de casa :)!</p>";
+              document.getElementById('estilos').href = 'css/positivo.css';
+              console.log(estilos);
+             modalneg();
+                
+
+            }
+//positivo
+
+            if (valorp == 0 | valorp == 1 | valorp == 2 | valorp == 3 && d.getDate() !== 10 && d.getDate() !== 13 && d.getDate() !== 16 && d.getDate() !== 19 && d.getDate() !== 22 && d.getDate() !== 25 && d.getDate() !== 28 && d.getDate() !== 1) {
              document.getElementById("mjj").innerHTML = "<p font-color='red'>NOO puedes salir de casa!</p> ";
              document.getElementById('estilos').href = 'css/negativo.css';
              console.log(estilos);   
@@ -276,7 +287,6 @@
                 
 
             }
-
 
             } else {
                 window.alert("Ingresa un numero valido entre 0 y 9 GRACIAS");
