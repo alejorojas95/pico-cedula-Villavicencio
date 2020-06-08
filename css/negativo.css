@@ -1,0 +1,9 @@
+﻿
+    .modalContainer .modal-content {
+        background-color: rgb(0, 0, 0);
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ff2b16;
+        border-top: 10px solid red;
+        width: 60%;
+    }
