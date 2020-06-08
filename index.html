@@ -1,0 +1,330 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Dia de Permiso en Villavicencio</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/css/mdb.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-size: 40px;
+            
+            background-repeat: no-repeat;
+            background-size: cover;
+        
+        }
+        .gris{
+
+            background:rgba(0, 0, 0, 0.54);
+        }
+        .top-nav-collapse {
+            background: rgba(0, 0, 0, 0.84) !important;
+        }
+        .bienve{
+         font-size:30px;
+        }
+        footer {
+            color: aliceblue;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.84);
+        }
+        .negativo{
+             color:red;
+             text-shadow:5px 5px 5px #000000;
+        }
+
+
+        .modalContainer {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+           
+            background-color: rgba(0,0,0,0.4);
+        }
+
+            .modalContainer .modal-content {
+                background-color: rgba(0, 0, 0, 0.79);
+                margin: auto;
+                padding: 20px;
+                border: 1px solid #ff2b16;
+                border-top: 10px solid red;
+                width: 60%;
+            }
+          
+          .modalContainer .modalpos{
+          background-color: rgba(0, 0, 0, 0.79);
+                margin: auto;
+                padding: 20px;
+                border: 1px solid #008000;
+                border-top: 10px solid green;
+                width: 60%;
+
+
+          }
+
+            
+    </style>
+</head>
+
+<body class="blue-gradient">
+    <nav class="navbar navbar-expand-lg navbar-dark gris scrolling-navbar fixed-top">
+
+
+        <div class="container">
+            <a class="navbar-brand" href="#"><p class="bienve">Bienvenido</p></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" tabindex="-1" href="#">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" tabindex="-1" href="#">Informacion</a>
+                    </li>
+
+                </ul>
+                <ul class="navbar-nav nav-flex-icons">
+                    <li class="nav-item">
+                        <a class="nav-link"><i class="fab fa-facebook-f fa-fw blue-text "></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"><i class="fab fa-twitter fa-fw blue-text"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"><i class="fab fa-instagram fa-fw pink-text"></i></a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </nav>
+    <br />
+    <br />
+    <br />
+    <div class=" container-fluid mx-auto" style="width: 700px; max-width:900px">
+
+
+        <div class="card text-center text-white bg-dark border-info mb-3 center-block">
+            <div class="card-header">
+                VERIFICA SI PUEDES SALIR DE TU CASA
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Ingresa el ultimo numero de la cedula</h5>
+                <p class="card-text">Ejemplo de cedula 1234567890  el ultimo numero es el 0</p>
+                <form>
+                    <input type="number" name="cedula" id="cedula" min="0" max="9" required />
+                    <button id="btnModal" type="submit" class="btn blue-gradient" value="submit" onclick="return recibir();">CONSULTAR</button>
+                </form>  
+                   <div id="tvesModal" class="modalContainer">
+                        <div  id="modal-content" class="modal-content" >
+
+                            <h2 >IMPORTANTE</h2>
+                            <div id="mjj"></div>
+                            <span class="close"><button id="btnModal" class="btn btn-danger" data-dismiss="modal" >ACEPTAR</button></span>
+                        </div>
+                    </div>
+                    <div id="txtcedula"></div>
+                
+
+            </div>
+            <div class="card-footer text-muted">
+                CEDULA
+            </div>
+        </div>
+        <br />
+        <div class="card text-center text-white bg-dark border-info mb-3">
+            <div class="card-header">
+                VERIFICA SI PUEDES TRANSITAR TU VEHICULO O MOTOCICLETA
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Ingresa el ultimo numero de la placa</h5>
+                <p class="card-text">Ejemplo de placa ixx80d el ultimo numero es 0.</p>
+                <form>
+                    <input type="number" name="placa" id="placa" min="0" max="9" required />
+                    <button id="btnModa" type="submit" class="btn blue-gradient" value="Enviar" onclick="return recibirPLACA();">CONSULTAR</button>
+                   
+   <div id="tvesModal" class="modalContainer">
+                        <div class="modal-content" id="modal-content">
+
+                            <h2>IMPORTANTE</h2>
+                            <p font-color="red">No puedes salir de casa!</p>
+                            <span class="close"><button id="btnModal">ACEPTAR</button></span>
+                        </div>
+                    </div>
+                    <div id="txtplaca"></div>
+                </form>
+            </div>
+            <div class="card-footer text-muted">
+                PLACA
+            </div>
+        </div>
+
+        <video src="http://www.transitodevillavicencio.gov.co/Videos/Noticias/Poligono%20PyPlaca2019.mp4" type="video/mp4" width="680" height="500" controls></video>
+    </div>
+    <br />
+
+    <footer class="fixed-bottom"> <p id="date"></p>Autor:Jhonathan Alejandro Rojas Argüello</footer>
+
+    
+    <script language="javascript">
+
+        var d = new Date();
+        var formato = "Fecha: " + d.toLocaleString([], { hour12: true });
+        document.write(d.getDate());
+        document.getElementById("date").innerHTML = formato;
+
+        console.log(d.getDate());
+        console.log(d.getDate());
+        console.log(d.getDate());
+        console.log(d.getDate());
+        
+        function recibir() {
+            
+           var intro = document.getElementById('modal-content');
+            var valor = document.getElementById("cedula").value;
+            var num;
+            console.log(typeof (valor));
+            console.log(valor);
+            num = Number(valor);
+            console.log(typeof(num));
+            console.log(num);
+            console.log(d.getDate(), "dia");
+
+            if (num >= 0 && num <= 9 && valor !== "") {
+                console.log("llegue aqui");
+
+                if (valor == 1 | valor == 3 | valor == 5 | valor == 7 | valor == 9 && d.getDate() == 6 | d.getDate() == 8 | d.getDate() == 10 | d.getDate() == 12 | d.getDate() == 14 | d.getDate() == 16 | d.getDate() == 18 | d.getDate() == 20 | d.getDate() == 22) {
+                    modalneg();
+                    document.getElementById("mjj").innerHTML = "<p font-color='red'>No puedes salir de casa!</p>";
+                    intro.className = 'modal-content';
+                    console.log(intro);
+                }
+
+                if (valor == 1 | valor == 3 | valor == 5 | valor == 7 | valor == 9 && d.getDate() == 5 | d.getDate() == 7 | d.getDate() == 9 | d.getDate() == 11 | d.getDate() == 13 | d.getDate() == 15 | d.getDate() == 17 | d.getDate() == 19 | d.getDate() == 21) {
+                    modalneg();
+                    document.getElementById("mjj").innerHTML = "<p font-color='red'>SII puedes salir de casa :)!</p> ";
+                    intro.className = 'modalpos';
+                    console.log(intro);
+                }
+
+                //cédula.par
+
+                if (valor == 0 | valor == 2 | valor == 4 | valor == 6 | valor == 8 && d.getDate() == 6 | d.getDate() == 8 | d.getDate() == 10 | d.getDate() == 12 | d.getDate() == 14 | d.getDate() == 16 | d.getDate() == 18 | d.getDate() == 20 | d.getDate() == 22) {
+                    modalneg();
+                    document.getElementById("mjj").innerHTML = "<p font-color='red'>SII puedes salir de casa :)!</p>";
+
+                    intro.className = 'modalpos';
+                    console.log(intro);
+
+                }
+                if (valor == 0 | valor == 2 | valor == 4 | valor == 6 | valor == 8 && d.getDate() == 5 | d.getDate() == 7 | d.getDate() == 9 | d.getDate() == 11 | d.getDate() == 13 | d.getDate() == 15 | d.getDate() == 17 | d.getDate() == 19 | d.getDate() == 21) {
+                    modalneg();
+                    document.getElementById("mjj").innerHTML = "<p font-color='red'>NOO puedes salir de casa!</p> ";
+                    intro.className = 'modal-content';
+                    console.log(intro);
+                }
+            } else {
+                window.alert("Ingresa un numero valido entre 0 y 9 GRACIAS");
+                console.log("no entre");
+            }
+
+            
+            return false;
+        }
+
+
+        function recibirPLACA() {
+            var valorp = document.getElementById("placa").value;
+
+            //document.getElementById("txtplaca").innerHTML = valorp;
+            console.log(valorp);
+
+            if (valorp == 4 | valorp == 5 | valorp == 6 && d.getDate() == 5 | d.getDate() == 8 | d.getDate() == 11 | d.getDate() == 14 | d.getDate() == 17 | d.getDate() == 20 | d.getDate() == 23 | d.getDate() == 26 | d.getDate() == 29) {
+                modalneg();
+                
+
+            }
+            return false;
+        }
+
+
+        function modalneg() {
+            console.log("entrando al modal");
+            var modal = document.getElementById("tvesModal");
+            var btn = document.getElementById("btnModal");
+            var span = document.getElementsByClassName("close")[0];
+            var body = document.getElementsByTagName("body")[0];
+
+           
+           modal.style.display = "block";
+
+           body.style.position = "static";
+           body.style.height = "100%";
+           body.style.overflow = "hidden";
+            
+
+            span.onclick = function () {
+                modal.style.display = "none";
+
+                body.style.position = "inherit";
+                body.style.height = "auto";
+                body.style.overflow = "visible";
+
+                return false;
+            }
+
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+
+                    body.style.position = "inherit";
+                    body.style.height = "auto";
+                    body.style.overflow = "visible";
+                }
+
+                return false;
+            }
+
+
+            return false;
+        }
+        
+     
+
+
+
+
+
+        
+
+
+    </script>
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.18.0/js/mdb.min.js"></script>
+</body>
+</html>
